@@ -1,0 +1,22 @@
+<h1 class="font-bold text-xl mb-4 text-center text-gray-800 text-center">Intento de calculadora</h1>
+<%= turbo_frame_tag "form" do %>
+    <%= form_for @operation, html: { class: "grid grid-cols-4 gap-4 bg-cyan-50 border p-8"} do |f| %>
+        <%= hidden_field_tag "operation[]", @operation.operand_one %>
+        <%= hidden_field_tag "operation[]", @operation.operation %>
+        <div class="col-span-2 bg-gray-200 px-8 text-right font-bold text-lg mb-2 border border-gray-300 text-gray-500 drop-shadow-md"> <%= @operation.result || @operation.message %></div>
+        <input type="submit" name="operation[]" value="1" class="button"/>
+        <input type="submit" name="operation[]" value="2" class="button"/>
+        <input type="submit" name="operation[]" value="3" class="button"/>
+        <input type="submit" name="operation[]" value="+" class="button"/>
+        <input type="submit" name="operation[]" value="4" class="button"/>
+        <input type="submit" name="operation[]" value="5" class="button"/>
+        <input type="submit" name="operation[]" value="6" class="button"/>
+        <input type="submit" name="operation[]" value="-" class="button"/>
+        <input type="submit" name="operation[]" value="7" class="button"/>
+        <input type="submit" name="operation[]" value="8" class="button"/>
+        <input type="submit" name="operation[]" value="9" class="button"/>
+        <input type="submit" name="operation[]" value="*" class="button"/>
+        <input type="submit" name="operation[]" value="0" class="button"/>
+        <input type="submit" name="operation[]" value=" " class="button"/>
+    <% end %>
+<% end %>
